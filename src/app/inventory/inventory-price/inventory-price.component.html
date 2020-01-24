@@ -1,0 +1,15 @@
+<div style="margin-left:45%;">
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter Price of Product1" name="price1" [(ngModel)] = "price1" >
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Enter Price of Product2" name="price2" [(ngModel)] = "price2"></textarea>
+    </mat-form-field>
+  </form>
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip style="margin-left:40px;" color="primary" selected (click) = "onSavePrice()">Save Price List</mat-chip>
+  </mat-chip-list>
+  <p *ngIf="contentDisplay1">Prices have been saved successfully...</p><br>
+  </div>

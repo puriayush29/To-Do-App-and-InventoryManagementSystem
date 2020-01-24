@@ -1,0 +1,21 @@
+<div *ngIf = "status;else spinner">
+<app-header></app-header>
+<br>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter title here.." name="postName" [(ngModel)] = "postName" >
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a comment" name="postContent" [(ngModel)] = "postContent"></textarea>
+    </mat-form-field>
+  </form>
+  <div class="chipButton">
+   <mat-chip-list aria-label="Fish selection">
+    <mat-chip layout="row" layout-align="center" color="primary" selected (click) ="onAddPost()">Save Post</mat-chip>
+  </mat-chip-list>
+  </div>
+</div>
+<ng-template #spinner>
+  <mat-spinner style="margin-top:150px;margin-left: 600px;"></mat-spinner>
+</ng-template>

@@ -1,0 +1,25 @@
+ <!-- <app-post-create (postCreated) = "onPostAdded($event)">
+</app-post-create>
+<app-post-list [posts] = "storedPost"></app-post-list>  -->
+
+<div style="background-color:whitesmoke;" *ngIf ="status;else spinner1">
+<app-header1></app-header1>
+<h1 style="color:#3F51B5;text-align: center;">Enter the Products:</h1>
+ <app-inventory-product (products) = "onProductsAdded($event)"></app-inventory-product>
+ <h1 style="color:#3F51B5;text-align:center;">Enter the Prices:</h1>
+ <app-inventory-price ></app-inventory-price>
+ <mat-chip-list aria-label="Fish selection">
+    <mat-chip style="margin-left:47%;"color="primary" selected (click)= "onDisplay()">Generate Invoice</mat-chip>
+  </mat-chip-list><br>
+  <div  *ngIf="productbool">
+    <mat-card>   
+ <h1>Products are:</h1>
+  <p *ngFor = "let store of productNames">{{store.product1}}<br>{{store.product2}}</p>
+  <h1>Total Expense:</h1>
+  <p *ngFor = "let var1 of totalExpense">{{var1}}</p>
+  </mat-card>
+</div>
+</div>
+<ng-template #spinner1>
+    <mat-spinner style="margin-top:150px;margin-left: 600px;"></mat-spinner>
+</ng-template>
